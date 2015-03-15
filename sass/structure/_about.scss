@@ -1,0 +1,17 @@
+// About page - Main color
+$color-about-main-r: 37;
+$color-about-main-g: 100;
+$color-about-main-b: 131;
+$color-about-main: rgb($color-about-main-r,$color-about-main-g,$color-about-main-b);
+
+.fullpage--about {
+
+  .fullpage--header {
+    background-color: $color-about-main;
+    color: $color-white;
+  }
+
+  .fullpage--content {
+
+  }
+}

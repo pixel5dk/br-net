@@ -1,0 +1,54 @@
+// Frontpage - Sky color
+$color-sky-r: 197;
+$color-sky-g: 226;
+$color-sky-b: 240;
+$color-sky: rgb($color-sky-r,$color-sky-g,$color-sky-b);
+
+// Frontpage - Sea color
+$color-sea-r: 46;
+$color-sea-g: 126;
+$color-sea-b: 165;
+$color-sea: rgb($color-sea-r,$color-sea-g,$color-sea-b);
+
+
+.fullpage--frontpage {
+  background-color: $color-sky;
+}
+
+.frontpage--sky {
+  height: 25%;
+  background-color: $color-sky;
+}
+
+.frontpage--sky--text {
+  padding-top:18%;
+  text-align: center;
+  margin-left:auto;
+  margin-right:auto;
+
+  h1 {
+    display:block;
+    font-size: 6vw;
+  }
+
+  h2 {
+    display:block;
+    font-size: 4vw;
+  }
+}
+
+.frontpage--buildings {
+  height: 40%;
+  width: 1000px;  
+  background: url(../images/frontpage_buildings_mobile.png) center center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-color: $color-sky;
+}
+
+.frontpage--sea {
+  height: 41%; // todo magic number?
+  background-color: $color-sea;
+}

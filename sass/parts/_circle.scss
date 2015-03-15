@@ -1,0 +1,179 @@
+// Refrence to _tools_mobile
+$circle--scale--small: $circle--scale / 1.5;
+$circle--scale--medium: $circle--scale;
+$circle--scale--large: $circle--scale * 2;
+
+.circle {
+  background-color: rgb($color-alt-r + 50,$color-alt-g + 50,$color-alt-b + 50);
+  border-radius: 50%;
+  width: $circle--scale--medium;
+  height: $circle--scale--medium;
+  border: $circle--scale--medium / 12 solid $color-white;
+  margin: $circle--scale--medium / 5;
+  margin-top: ($circle--scale--medium / 5) + ($circle--scale--medium / 20);
+  z-index: 200;
+  overflow: hidden;
+  float: left;
+
+  img {
+    width: $circle--scale--medium;
+  }
+}
+
+.circle--percentage {
+  border-radius: 50%;
+  width: $circle--scale--medium + ($circle--scale--medium / 5);
+  height: $circle--scale--medium + ($circle--scale--medium / 5); 
+  background-color: $color-orange;
+  padding-top: $circle--scale--medium / 25;
+  padding-left: $circle--scale--medium / 25; 
+  margin: $circle--scale--medium / 5;
+  z-index: 100;
+  float: left;
+
+  .circle {
+    margin: 0;
+  }
+}
+
+// Colour schemes
+
+// Greenblue
+.greenblue .circle {
+  background-color: rgb($color-greenblue-r + 30,$color-greenblue-g + 30,$color-greenblue-b + 30); 
+}
+
+.greenblue--alt .circle,
+.greenblue--alt .circle--large {
+  border-color: $color-greenblue;
+}
+
+// Blue-dark.
+.blue-dark .circle {
+  background-color: rgb($color-blue-dark-r + 30,$color-blue-dark-g + 30,$color-blue-dark-b + 30); 
+}
+
+.blue-dark--alt .circle,
+.blue-dark--alt .circle--large {
+  border-color: $color-blue-dark;
+}
+
+// Green.
+.green .circle {
+  background-color: rgb($color-green-r + 30,$color-green-g + 30,$color-green-b + 30); 
+}
+
+.green--alt .circle,
+.green--alt .circle--large {
+  border-color: $color-green;
+}
+
+// Circle large
+.circle--large {
+  @extend .circle;
+  width: $circle--scale--large;
+  height: $circle--scale--large;
+  border: $circle--scale--large / 12 solid $color-white;
+  margin: $circle--scale--large / 5;
+  margin-top: ($circle--scale--large / 5) + ($circle--scale--large / 20);
+
+  img {
+    width: $circle--scale--large;
+  }
+}
+
+.circle--large--percentage {
+  border-radius: 50%;
+  width: $circle--scale--large + ($circle--scale--large / 5);
+  height: $circle--scale--large + ($circle--scale--large / 5); 
+  background-color: $color-orange;
+  padding-top: $circle--scale--large / 25;
+  padding-left: $circle--scale--large / 25; 
+  z-index: 100;
+  float: left;
+  margin: $circle--scale--large / 5;
+
+  .circle--large {
+    margin: 0;
+  }
+} 
+
+// Circle small
+.circle--small {
+  @extend .circle;
+  width: $circle--scale--small;
+  height: $circle--scale--small;
+  border: $circle--scale--small / 12 solid $color-white;
+  margin: $circle--scale--small / 5;
+  margin-top: ($circle--scale--small / 5) + ($circle--scale--small / 20);
+
+  img {
+    width: $circle--scale--small;
+  }
+}
+
+.circle--small--percentage {
+  border-radius: 50%;
+  width: $circle--scale--small + ($circle--scale--small / 5);
+  height: $circle--scale--small + ($circle--scale--small / 5); 
+  background-color: $color-orange;
+  padding-top: $circle--scale--small / 25;
+  padding-left: $circle--scale--small / 25; 
+  z-index: 100;
+  float: left;
+  margin: $circle--scale--small / 5;
+
+  .circle--small {
+    margin: 0;
+  }
+} 
+
+@for $j from 0 through 49 { 
+  .js--circle--p#{$j} {
+    background-image:
+      linear-gradient(((360 / 100 * $j) + 90) + deg, transparent 50%, $color-white 50%),
+      linear-gradient(90deg, $color-white 50%, transparent 50%);
+  }
+  /*
+  .greenblue--alt .js--circle--p#{$j} {
+    background-image:
+      linear-gradient(((360 / 100 * $j) + 90) + deg, transparent 50%, $color-greenblue 50%),
+      linear-gradient(90deg, $color-greenblue 50%, transparent 50%);
+  }
+  .blue-dark--alt .js--circle--p#{$j} {
+    background-image:
+      linear-gradient(((360 / 100 * $j) + 90) + deg, transparent 50%, $color-blue-dark 50%),
+      linear-gradient(90deg, $color-blue-dark 50%, transparent 50%);
+  }
+  .green--alt .js--circle--p#{$j} {
+    background-image:
+      linear-gradient(((360 / 100 * $j) + 90) + deg, transparent 50%, $color-green 50%),
+      linear-gradient(90deg, $color-green 50%, transparent 50%);
+  }
+  */
+}
+
+@for $j from 50 through 100 { 
+  .js--circle--p#{$j} {
+    background-image:
+      linear-gradient(((360 / 100 * ($j - 50)) + 90) + deg, transparent 50%, $color-orange 50%),
+      linear-gradient(90deg, $color-white 50%, transparent 50%);
+  }
+  /*
+  .greenblue--alt .js--circle--p#{$j} {
+    background-image:
+      linear-gradient(((360 / 100 * ($j - 50)) + 90) + deg, transparent 50%, $color-orange 50%),
+      linear-gradient(90deg, $color-greenblue 50%, transparent 50%);
+  }
+  .blue-dark--alt .js--circle--p#{$j} {
+    background-image:
+      linear-gradient(((360 / 100 * ($j - 50)) + 90) + deg, transparent 50%, $color-orange 50%),
+      linear-gradient(90deg, $color-blue-dark 50%, transparent 50%);
+  }
+  .green--alt .js--circle--p#{$j} {
+    background-image:
+      linear-gradient(((360 / 100 * ($j - 50)) + 90) + deg, transparent 50%, $color-orange 50%),
+      linear-gradient(90deg, $color-green 50%, transparent 50%);
+  }
+  */
+}
